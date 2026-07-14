@@ -10,7 +10,7 @@ if (backLink) {
 
 
 
-let minutes = 2;
+let minutes = 25;
 let seconds = 0;
 const timerCountdownElement = document.querySelector('.timer-countdown');
 const timerRingProgressElement = document.querySelector('.timer-ring-progress');
@@ -29,7 +29,7 @@ const timerTask = () => {
 
         let progress = (totalSeconds - currentSeconds) / totalSeconds;
 
-        console.log(progress * 360)
+        //console.log(progress * 360)
 
         let angle = progress * 360;
 
@@ -81,7 +81,7 @@ resetBtn.addEventListener('click', () => {
     resetBtn.classList.add('active');
 
     clearInterval(timer);
-    minutes = 2;
+    minutes = 25;
     seconds = 0;
     timerCountdownElement.innerText =
         `${String(minutes).padStart(2, "0")}:${String(seconds).padStart(2, "0")}`;

@@ -75,4 +75,34 @@ document.querySelector('.quick-card.motivation').addEventListener('click', () =>
 
 })
 
+
+const currentTime = new Date().toLocaleTimeString('en-US', {
+    hour: 'numeric',
+    minute: '2-digit',
+    hour12: true
+});
+
+const currentDay = new Date().toLocaleDateString('en-IN', {
+    dateStyle: 'full'
+});
+
+
+const currentHour = new Date().getHours();
+let timeOfDay = null;
+if (currentHour >= 6 && currentHour < 12) {
+    //console.log("Good morning");
+    timeOfDay = 'Morning';
+} else if (currentHour >= 12 && currentHour < 17) {
+    //console.log("Good afternoon");
+    timeOfDay = 'Afternoon';
+} else {
+    //console.log("Good evening");
+    timeOfDay = 'Evening';
+}
+
+document.querySelector('.greeting h1').innerHTML = `Good ${timeOfDay}, Naveen! <span aria-hidden="true">👋</span>`;
+
+document.querySelector('.info-grid .big').innerText = currentTime;
+document.querySelector('.info-grid .sub').innerText = currentDay;
+
 export default activeLayout;

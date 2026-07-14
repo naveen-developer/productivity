@@ -20,7 +20,7 @@ fetch(url).then((res) => {
     }
     return res.json();
 }).then((data) => {
-    console.log(data)
+    //    console.log(data)
     document.querySelector('.weather-location').innerText = `${data.location.name} ${data.location.region}, ${data.location.country}`;
     document.querySelector('.weather-temp').innerText = `${Math.floor(data.current.temp_c)}°C`;
     document.querySelector('.side-stat-value.humidity').innerText = `${Math.floor(data.current.humidity)}%`;
