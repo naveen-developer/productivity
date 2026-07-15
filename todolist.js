@@ -1,9 +1,10 @@
-import activeLayout from './main.js';
+import activeLayout, { dashboardLiActive } from './main.js';
 
 const backLink = document.querySelector('.todo-list .back-link');
 
 if (backLink) {
     backLink.addEventListener('click', () => {
+        dashboardLiActive();
         activeLayout(document.querySelector('.dashboard'));
     });
 }

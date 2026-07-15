@@ -1,9 +1,10 @@
-import activeLayout from './main.js';
+import activeLayout, { dashboardLiActive } from './main.js';
 
 const backLink = document.querySelector('.daily-planner .back-link');
 
 if (backLink) {
     backLink.addEventListener('click', () => {
+        dashboardLiActive();
         activeLayout(document.querySelector('.dashboard'));
     });
 }
@@ -76,6 +77,7 @@ const toSetDumyDataOnLocalStorage = () => {
 }
 //toSetDumyDataOnLocalStorage();
 
+
 const getDatafromLocal = (item) => {
     return JSON.parse(localStorage.getItem(item))
 }
@@ -84,6 +86,7 @@ const getDatafromLocal = (item) => {
 const dailyPlannerUI = () => {
     const localStorageData = getDatafromLocal('dailyPlanner');
     if (!localStorageData) {
+        toSetDumyDataOnLocalStorage();
         return;
     }
     const plannerLists = document.querySelector('.planner-list');

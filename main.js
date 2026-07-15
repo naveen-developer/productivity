@@ -30,6 +30,12 @@ const layouts = {
 
 const primeNavigationListItems = document.querySelectorAll('.prime-nav li button');
 
+export const dashboardLiActive = () => {
+    primeNavigationListItems.forEach((item) => item.classList.remove('active'));
+    document.querySelector('.dashboard-item').classList.add('active');
+}
+
+
 primeNavigationListItems.forEach((item) => {
     item.addEventListener('click', () => {
 
@@ -55,21 +61,21 @@ document.querySelector('.quick-card.daily_planner').addEventListener('click', ()
 })
 
 document.querySelector('.quick-card.pomodoro').addEventListener('click', () => {
-    activeLayout(dailyPlanner);
+    activeLayout(pomodoroTimer);
     primeNavigationListItems.forEach((item) => item.classList.remove('active'));
     document.querySelector('.nav-item.pomodoro').classList.add('active')
 
 })
 
 document.querySelector('.quick-card.weather').addEventListener('click', () => {
-    activeLayout(dailyPlanner);
+    activeLayout(weatherForecast);
     primeNavigationListItems.forEach((item) => item.classList.remove('active'));
     document.querySelector('.nav-item.weather').classList.add('active')
 
 })
 
 document.querySelector('.quick-card.motivation').addEventListener('click', () => {
-    activeLayout(dailyPlanner);
+    activeLayout(motivationQuote);
     primeNavigationListItems.forEach((item) => item.classList.remove('active'));
     document.querySelector('.nav-item.motivation').classList.add('active')
 

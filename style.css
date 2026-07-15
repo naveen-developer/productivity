@@ -1613,6 +1613,10 @@ label.task-name {
     stroke: rgba(128, 128, 128, 0.15);
 }
 
+.todo-header-actions {
+    display: none;
+}
+
 @media (max-width: 30rem) {
     .weather-card {
         padding: 1.25rem 1.25rem 1.5rem;
