@@ -111,4 +111,10 @@ document.querySelector('.greeting h1').innerHTML = `Good ${timeOfDay}, Naveen! <
 document.querySelector('.info-grid .big').innerText = currentTime;
 document.querySelector('.info-grid .sub').innerText = currentDay;
 
+
+document.querySelector('.weather-top-actions .icon-btn').addEventListener('click', () => {
+    alert('current location has been loaded');
+    activeLayout(weatherForecast);
+})
+
 export default activeLayout;
